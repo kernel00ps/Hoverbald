@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c00whd1nguasd"]
+
+[ext_resource type="Texture2D" uid="uid://vs031aagsj1j" path="res://assets/laser.png" id="1_uir3f"]
+[ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_xlgrv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xpr3"]
+size = Vector2(223, 581)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a47u"]
+size = Vector2(229.5, 583.5)
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_xlgrv")
+
+[node name="UpperArea" type="Area2D" parent="."]
+
+[node name="Upper" type="Sprite2D" parent="UpperArea"]
+texture = ExtResource("1_uir3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArea"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_1xpr3")
+
+[node name="LowerArea" type="Area2D" parent="."]
+
+[node name="Lower" type="Sprite2D" parent="LowerArea"]
+position = Vector2(0, 700)
+texture = ExtResource("1_uir3f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArea"]
+position = Vector2(1.25, 698.25)
+shape = SubResource("RectangleShape2D_4a47u")
+
+[connection signal="body_entered" from="UpperArea" to="." method="_on_upper_area_body_entered"]
+[connection signal="body_entered" from="LowerArea" to="." method="_on_lower_area_body_entered"]

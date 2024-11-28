@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://jji3nab8jhkx"]
+
+[node name="ObstacleTimer" type="Timer"]

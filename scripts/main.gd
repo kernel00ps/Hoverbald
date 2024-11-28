@@ -1,5 +1,10 @@
 extends Node
 
+@export var obstacle_scene : PackedScene
+
+const OBSTACLE_DELAY: int = 100
+const OBSTACLE_RANGE: int = 200
+
 var game_running : bool
 var game_over : bool
 var scroll
@@ -8,7 +13,6 @@ const SCROLL_SPEED : int = 1
 var screen_size: Vector2i
 var ground_height : int
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	new_game()
 	
@@ -36,6 +40,12 @@ func start_game():
 	$Player.moving = true
 	# animacija?
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func generate_obstacles() -> void:
+	var obstacle: Node = obstacle_scene.instantiate()
+	obstacle.position.x = screen_size.x + OBSTACLE_DELAY
+
+func _on_obstacle_timer_timeout() -> void:
+	generate_obstacles()
