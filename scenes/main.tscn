@@ -12,7 +12,3 @@ texture = ExtResource("1_5ucd6")
 centered = false
 
 [node name="Player" parent="." instance=ExtResource("3_wbals")]
-
-[node name="MovingBackground" type="Node" parent="."]
-
-[node name="Parallax2D" type="Parallax2D" parent="MovingBackground"]
