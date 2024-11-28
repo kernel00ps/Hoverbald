@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://w1kwmbmrpyeu"]
+[gd_scene load_steps=5 format=3 uid="uid://w1kwmbmrpyeu"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_0bsyh"]
-[ext_resource type="Texture2D" uid="uid://ce11dwi6auwbu" path="res://assets/bg.png" id="1_5ucd6"]
+[ext_resource type="PackedScene" uid="uid://b57a1a0xdbrxf" path="res://scenes/mooving_background.tscn" id="3_ugu72"]
 [ext_resource type="PackedScene" uid="uid://cs580vr1jmwkj" path="res://scenes/player.tscn" id="3_wbals"]
+[ext_resource type="PackedScene" uid="uid://ctgtxpx0535lm" path="res://scenes/scroll_controller.tscn" id="4_i0ox6"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0bsyh")
 
-[node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_5ucd6")
-centered = false
-
 [node name="Player" parent="." instance=ExtResource("3_wbals")]
+
+[node name="MoovingBackground" parent="." instance=ExtResource("3_ugu72")]
+
+[node name="ScrollController" parent="." instance=ExtResource("4_i0ox6")]

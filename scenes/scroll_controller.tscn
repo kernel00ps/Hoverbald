@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctgtxpx0535lm"]
+
+[ext_resource type="Script" path="res://scripts/scroll_controller.gd" id="1_yltno"]
+
+[node name="ScrollController" type="Node2D"]
+script = ExtResource("1_yltno")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
