@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://w1kwmbmrpyeu"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_0bsyh"]
+[ext_resource type="Texture2D" uid="uid://ce11dwi6auwbu" path="res://assets/bg.png" id="1_5ucd6"]
+[ext_resource type="PackedScene" uid="uid://cs580vr1jmwkj" path="res://scenes/player.tscn" id="3_wbals"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0bsyh")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ucd6")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("3_wbals")]
