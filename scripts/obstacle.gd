@@ -11,5 +11,8 @@ func _on_upper_area_body_entered(body: Node2D) -> void:
 func _on_lower_area_body_entered(body: Node2D) -> void:
 	obstacle_hit()
 
+func _on_middle_area_body_entered(body: Node2D) -> void:
+	obstacle_hit()
+
 func obstacle_hit() -> void:
 	hit_obstable.emit()
