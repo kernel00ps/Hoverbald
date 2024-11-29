@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://b57a1a0xdbrxf"]
+[gd_scene load_steps=9 format=4 uid="uid://b57a1a0xdbrxf"]
 
 [ext_resource type="Script" path="res://scripts/mooving_background.gd" id="1_pglgx"]
 [ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="2_w3vkq"]
@@ -50,6 +50,9 @@ texture = ExtResource("3_am7eg")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_8k37t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8n87q"]
+size = Vector2(255, 20)
+
 [node name="MoovingBackground" type="Node2D"]
 script = ExtResource("1_pglgx")
 
@@ -66,3 +69,10 @@ tile_set = SubResource("TileSet_lxsvx")
 [node name="BottomTiles" type="TileMapLayer" parent="Parallax2D"]
 tile_map_data = PackedByteArray("AAD5/wcAAAAEAAAAAAD4/wcAAAAHAAAAAAD3/wcAAAAFAAAAAAD2/wcAAAADAAAAAAD1/wcAAAADAAAAAAD0/wcAAAAEAAAAAADz/wcAAAAEAAAAAADy/wcAAAAEAAAAAADx/wcAAAABAAAAAADw/wcAAAABAAAAAADv/wcAAAADAAAAAADu/wcAAAAAAAAAAADt/wcAAAAFAAAAAADs/wcAAAABAAAAAADr/wcAAAADAAAAAAD6/wcAAAABAAAAAAD7/wcAAAABAAAAAAD8/wcAAAAHAAAAAAD9/wcAAAAAAAAAAAD+/wcAAAAEAAAAAAD//wcAAAAGAAAAAAAAAAcAAAAGAAAAAAABAAcAAAAGAAAAAAACAAcAAAAGAAAAAAADAAcAAAABAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAFAAAAAAAGAAcAAAAFAAAAAAAHAAcAAAAFAAAAAAAIAAcAAAADAAAAAAAJAAcAAAAHAAAAAAAKAAcAAAABAAAAAAALAAcAAAACAAAAAAAMAAcAAAAEAAAAAAANAAcAAAACAAAAAAAOAAcAAAABAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAACAAAAAAARAAcAAAAAAAAAAAASAAcAAAAHAAAAAAATAAcAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_h3wpy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 122)
+shape = SubResource("RectangleShape2D_8n87q")
