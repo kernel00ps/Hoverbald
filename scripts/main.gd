@@ -10,10 +10,18 @@ var game_over : bool
 var scroll
 var score
 const SCROLL_SPEED : int = 1
-var screen_size: Vector2i
+var viewport_size: Vector2
+var viewport_width: float
+var viewport_height: float
 var ground_height : int
 
+var obstacle_list: Node2D
+
 func _ready() -> void:
+	obstacle_list = get_node("Obstacles")
+	viewport_size = get_viewport().get_visible_rect().size
+	viewport_width = viewport_size.x
+	viewport_height = viewport_size.y
 	new_game()
 	
 func new_game():
@@ -23,24 +31,22 @@ func new_game():
 	scroll = 0
 	
 func _input(event):
-	#if(!game_over):
-	#	if event is InputEventKey:
-	#		if event.button_index == KEY_SPACE && event.pressed:
-	#			if(!game_running):
-	#				start_game()
-				#else: <- za animaciju
-				#	if $Player.moving:
 	if(!game_over && Input.is_key_pressed(KEY_SPACE)):
 		if(!game_running):
 			start_game()
 					
 func start_game():
 	game_running = true
-	# animacija?
 
 func generate_obstacles() -> void:
-	var obstacle: Node = obstacle_scene.instantiate()
-	obstacle.position.x = screen_size.x + OBSTACLE_DELAY
-
+	var obstacle: Obstacle = obstacle_scene.instantiate()
+	obstacle.position.x = viewport_width + OBSTACLE_DELAY
+	obstacle.position.y = randi_range(-OBSTACLE_RANGE, OBSTACLE_RANGE)
+	obstacle.hit_obstable.connect(player_hit_obstacle)
+	obstacle_list.add_child(obstacle)
+	 
 func _on_obstacle_timer_timeout() -> void:
 	generate_obstacles()
+
+func player_hit_obstacle() -> void:
+	pass

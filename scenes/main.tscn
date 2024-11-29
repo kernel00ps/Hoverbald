@@ -18,7 +18,10 @@ obstacle_scene = ExtResource("2_oj32y")
 
 [node name="Player" parent="ScrollController" instance=ExtResource("3_wbals")]
 
+[node name="Obstacles" type="Node2D" parent="."]
+
 [node name="ObstacleTimer" parent="." instance=ExtResource("5_sq6i2")]
+autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("7_pxdqj")]
 
