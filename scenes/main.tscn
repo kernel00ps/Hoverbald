@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_0bsyh"]
 [ext_resource type="PackedScene" uid="uid://c00whd1nguasd" path="res://scenes/obstacle.tscn" id="2_oj32y"]
-[ext_resource type="PackedScene" uid="uid://b57a1a0xdbrxf" path="res://scenes/mooving_background.tscn" id="3_ugu72"]
+[ext_resource type="PackedScene" uid="uid://dcthkt21uc2w8" path="res://scenes/background.tscn" id="3_tlisb"]
 [ext_resource type="PackedScene" uid="uid://cs580vr1jmwkj" path="res://scenes/player.tscn" id="3_wbals"]
 [ext_resource type="PackedScene" uid="uid://ctgtxpx0535lm" path="res://scenes/scroll_controller.tscn" id="4_i0ox6"]
 [ext_resource type="PackedScene" uid="uid://jji3nab8jhkx" path="res://scenes/obstacle_timer.tscn" id="5_sq6i2"]
@@ -11,7 +11,7 @@
 script = ExtResource("1_0bsyh")
 obstacle_scene = ExtResource("2_oj32y")
 
-[node name="MoovingBackground" parent="." instance=ExtResource("3_ugu72")]
+[node name="Background" parent="." instance=ExtResource("3_tlisb")]
 
 [node name="ScrollController" parent="." instance=ExtResource("4_i0ox6")]
 
