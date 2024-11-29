@@ -39,12 +39,20 @@ func start_game():
 	game_running = true
 
 func generate_obstacles() -> void:
+	
+	remove_offscreen_obstacles()
+	
 	var obstacle: Obstacle = obstacle_scene.instantiate()
 	obstacle.position.x = viewport_width + OBSTACLE_DELAY
 	obstacle.position.y = randi_range(-OBSTACLE_RANGE, OBSTACLE_RANGE)
 	obstacle.hit_obstable.connect(player_hit_obstacle)
 	obstacle_list.add_child(obstacle)
 	 
+func remove_offscreen_obstacles():
+	for obstacle in obstacle_list.get_children():
+		if obstacle.position.x < -OBSTACLE_DELAY:
+			obstacle.queue_free()
+	
 func _on_obstacle_timer_timeout() -> void:
 	generate_obstacles()
 
