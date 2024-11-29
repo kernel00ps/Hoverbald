@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://w1kwmbmrpyeu"]
+[gd_scene load_steps=9 format=3 uid="uid://w1kwmbmrpyeu"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_0bsyh"]
 [ext_resource type="PackedScene" uid="uid://c00whd1nguasd" path="res://scenes/obstacle.tscn" id="2_oj32y"]
+[ext_resource type="PackedScene" uid="uid://d2bs40c8nplqc" path="res://scenes/pickup_energy.tscn" id="3_h4b1p"]
 [ext_resource type="PackedScene" uid="uid://dcthkt21uc2w8" path="res://scenes/background.tscn" id="3_tlisb"]
 [ext_resource type="PackedScene" uid="uid://cs580vr1jmwkj" path="res://scenes/player.tscn" id="3_wbals"]
 [ext_resource type="PackedScene" uid="uid://ctgtxpx0535lm" path="res://scenes/scroll_controller.tscn" id="4_i0ox6"]
@@ -11,6 +12,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_0bsyh")
 obstacle_scene = ExtResource("2_oj32y")
+pickup_energy_scene = ExtResource("3_h4b1p")
 
 [node name="Background" parent="." instance=ExtResource("3_tlisb")]
 
@@ -20,9 +22,16 @@ obstacle_scene = ExtResource("2_oj32y")
 
 [node name="Obstacles" type="Node2D" parent="."]
 
+[node name="PickUpEnergies" type="Node2D" parent="."]
+
 [node name="ObstacleTimer" parent="." instance=ExtResource("5_sq6i2")]
+autostart = true
+
+[node name="EnergyTimer" type="Timer" parent="."]
+wait_time = 0.809
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("7_pxdqj")]
 
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
+[connection signal="timeout" from="EnergyTimer" to="." method="_on_energy_timer_timeout"]
