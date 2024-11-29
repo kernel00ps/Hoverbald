@@ -6,7 +6,7 @@ func _ready() -> void:
 	var paralax: Parallax2D = get_node("Parallax2D")
 	var background: Sprite2D = get_node("Parallax2D/Sprite2D")
 	paralax.repeat_size.x = background.texture.get_width()
-	paralax.repeat_times = 3
+	paralax.repeat_times = 20
 	
 	#ovo sranje centrira paralex kako se ne bi jebo
 	var viewport_size = get_viewport().get_visible_rect().size

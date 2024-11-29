@@ -21,7 +21,6 @@ func new_game():
 	game_over = false
 	score = 0
 	scroll = 0
-	$Player.reset()
 	
 func _input(event):
 	#if(!game_over):
@@ -37,7 +36,6 @@ func _input(event):
 					
 func start_game():
 	game_running = true
-	$Player.moving = true
 	# animacija?
 
 func _process(delta: float) -> void:

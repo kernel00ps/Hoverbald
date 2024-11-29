@@ -11,11 +11,11 @@
 script = ExtResource("1_0bsyh")
 obstacle_scene = ExtResource("2_oj32y")
 
-[node name="Player" parent="." instance=ExtResource("3_wbals")]
-
 [node name="MoovingBackground" parent="." instance=ExtResource("3_ugu72")]
 
 [node name="ScrollController" parent="." instance=ExtResource("4_i0ox6")]
+
+[node name="Player" parent="ScrollController" instance=ExtResource("3_wbals")]
 
 [node name="ObstacleTimer" parent="." instance=ExtResource("5_sq6i2")]
 

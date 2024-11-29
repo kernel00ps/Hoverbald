@@ -218,7 +218,7 @@ shape = SubResource("RectangleShape2D_1xpr3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UpperArea"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6kqde")
-frame_progress = 0.404236
+frame_progress = 0.732889
 
 [node name="LowerArea" type="Area2D" parent="."]
 
@@ -230,7 +230,7 @@ shape = SubResource("RectangleShape2D_4a47u")
 texture_filter = 1
 position = Vector2(0, 100)
 sprite_frames = SubResource("SpriteFrames_gsyy0")
-frame_progress = 0.329096
+frame_progress = 0.657748
 
 [node name="MiddleArea" type="Area2D" parent="."]
 
@@ -239,7 +239,7 @@ texture_filter = 1
 position = Vector2(0, 49.096)
 scale = Vector2(1, 2.18959)
 sprite_frames = SubResource("SpriteFrames_tl8sc")
-frame_progress = 0.229086
+frame_progress = 0.557737
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
 position = Vector2(0, 51)

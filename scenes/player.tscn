@@ -1,42 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cs580vr1jmwkj"]
 
-[ext_resource type="Texture2D" uid="uid://bj600cpk2anic" path="res://assets/player1.png" id="1_6j1gs"]
-
-[sub_resource type="GDScript" id="GDScript_p5b4e"]
-script/source = "extends CharacterBody2D
-
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-var moving : bool = false # dok ne udari u nesto
-const START_POS = Vector2(100, 200)
-
-func _ready():
-	reset()
-	
-func reset():
-	moving = false
-	position = START_POS
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
-	move_and_slide()
-"
+[ext_resource type="Texture2D" uid="uid://bj600cpk2anic" path="res://assets/temp/player1.png" id="1_6j1gs"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ghomb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6diq3"]
 animations = [{
@@ -54,7 +19,7 @@ radius = 12.0
 height = 32.0
 
 [node name="Player" type="CharacterBody2D"]
-script = SubResource("GDScript_p5b4e")
+script = ExtResource("1_ghomb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6diq3")
