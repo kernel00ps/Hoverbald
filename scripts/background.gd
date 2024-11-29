@@ -28,7 +28,7 @@ func _ready() -> void:
 	
 	var start_x: int = -1 * (viewport_width /  (2 * PIXEL_SIZE)) - 1
 	var lower_y: int = (viewport_height /  (2 * PIXEL_SIZE)) - 1
-	var upper_y: int = -1 * (viewport_height /  (2 * PIXEL_SIZE)) + 1
+	var upper_y: int = -1 * (viewport_height /  (2 * PIXEL_SIZE)) + 2
 	
 	generate_floor(Vector2i(start_x, lower_y), BUFFER, true)
 	generate_floor(Vector2i(start_x, upper_y), BUFFER, false)
