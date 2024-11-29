@@ -38,9 +38,6 @@ func start_game():
 	game_running = true
 	# animacija?
 
-func _process(delta: float) -> void:
-	pass
-
 func generate_obstacles() -> void:
 	var obstacle: Node = obstacle_scene.instantiate()
 	obstacle.position.x = screen_size.x + OBSTACLE_DELAY
