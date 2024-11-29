@@ -25,10 +25,12 @@ texture_progress = ExtResource("3_rc0dg")
 position = Vector2(10, 10)
 
 [node name="Progress" type="Sprite2D" parent="FuelImages"]
+texture_filter = 1
 texture = ExtResource("3_rc0dg")
 centered = false
 
 [node name="Empty" type="Sprite2D" parent="FuelImages"]
+texture_filter = 1
 texture = ExtResource("2_8mklf")
 centered = false
 
