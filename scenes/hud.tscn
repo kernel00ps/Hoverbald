@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://41qvysc2rxce"]
+[gd_scene load_steps=5 format=3 uid="uid://41qvysc2rxce"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_n06tn"]
-[ext_resource type="Texture2D" uid="uid://mxl1p37w4mlh" path="res://assets/sprites/bar_energy_empty_1x8.png" id="2_8mklf"]
-[ext_resource type="Texture2D" uid="uid://bfucgy2cwp2nn" path="res://assets/sprites/bar_energy_full_1x8.png" id="3_rc0dg"]
+[ext_resource type="Texture2D" uid="uid://mxl1p37w4mlh" path="res://assets/sprites/bar_energy_empty_16x8.png" id="2_8mklf"]
+[ext_resource type="Texture2D" uid="uid://bfucgy2cwp2nn" path="res://assets/sprites/bar_energy_full_16x8.png" id="3_rc0dg"]
 [ext_resource type="Texture2D" uid="uid://cbuoayw4y032a" path="res://assets/sprites/bar_energy_edge_5x10.png" id="4_r7u3x"]
-[ext_resource type="Texture2D" uid="uid://cli1s256q7a7g" path="res://assets/sprites/bar_energy_edge_5x10_flip.png" id="5_b6fke"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_n06tn")
@@ -22,13 +21,16 @@ texture_under = ExtResource("2_8mklf")
 texture_progress = ExtResource("3_rc0dg")
 
 [node name="FuelImages" type="Node2D" parent="."]
-position = Vector2(10, 10)
+position = Vector2(15, 10)
+scale = Vector2(1.2, 1.2)
 
 [node name="Progress" type="Sprite2D" parent="FuelImages"]
+texture_filter = 1
 texture = ExtResource("3_rc0dg")
 centered = false
 
 [node name="Empty" type="Sprite2D" parent="FuelImages"]
+texture_filter = 1
 texture = ExtResource("2_8mklf")
 centered = false
 
@@ -40,4 +42,5 @@ texture = ExtResource("4_r7u3x")
 [node name="EdgeRight" type="Sprite2D" parent="FuelImages"]
 texture_filter = 1
 position = Vector2(18, 4)
-texture = ExtResource("5_b6fke")
+scale = Vector2(-1, 1)
+texture = ExtResource("4_r7u3x")
