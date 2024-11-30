@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://51hql28ervol"]
+
+[ext_resource type="Texture2D" uid="uid://cmgymkudetfv" path="res://assets/sprites/logo_160x64.png" id="1_1lyvp"]
+[ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_xqkqr"]
+[ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="2_rfisl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdnrf"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(128, 112)
+texture = ExtResource("1_xqkqr")
+
+[node name="logo" type="Sprite2D" parent="."]
+position = Vector2(128, 62)
+texture = ExtResource("1_1lyvp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -7.0
+offset_right = 47.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(92, 85.5)
+
+[node name="play_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_focus_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_color = Color(0.580392, 0, 0.517647, 1)
+theme_override_fonts/font = ExtResource("2_rfisl")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdnrf")
+text = "Play"
+flat = true
+
+[node name="controls_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_focus_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_color = Color(0.580392, 0, 0.517647, 1)
+theme_override_fonts/font = ExtResource("2_rfisl")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdnrf")
+text = "How to Play"
+flat = true
+
+[node name="sound_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_focus_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_color = Color(0.580392, 0, 0.517647, 1)
+theme_override_fonts/font = ExtResource("2_rfisl")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdnrf")
+text = "Sound:ON"
+flat = true
+
+[node name="credits_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_focus_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_color = Color(0.580392, 0, 0.517647, 1)
+theme_override_fonts/font = ExtResource("2_rfisl")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdnrf")
+text = "Credits"
+flat = true
+
+[node name="quit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_focus_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_color = Color(0.580392, 0, 0.517647, 1)
+theme_override_fonts/font = ExtResource("2_rfisl")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hdnrf")
+text = "Quit"
+flat = true
