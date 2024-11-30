@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://w1kwmbmrpyeu"]
+[gd_scene load_steps=15 format=3 uid="uid://w1kwmbmrpyeu"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_0bsyh"]
 [ext_resource type="PackedScene" uid="uid://c00whd1nguasd" path="res://scenes/obstacle.tscn" id="2_oj32y"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://jji3nab8jhkx" path="res://scenes/obstacle_timer.tscn" id="5_sq6i2"]
 [ext_resource type="PackedScene" uid="uid://41qvysc2rxce" path="res://scenes/hud.tscn" id="7_pxdqj"]
 [ext_resource type="PackedScene" uid="uid://dlnpqkpchbcd8" path="res://scenes/game_over.tscn" id="9_1dwne"]
+[ext_resource type="AudioStream" uid="uid://mkuqu8q4y1ln" path="res://assets/sound/music/song_main_intro.wav" id="11_8lr5t"]
+[ext_resource type="AudioStream" uid="uid://svqvb4sxt2we" path="res://assets/sound/music/song_main_1.wav" id="12_t4twm"]
+[ext_resource type="AudioStream" uid="uid://88eflf8eh02w" path="res://assets/sound/sound_crash_1.wav" id="13_7xarg"]
+[ext_resource type="AudioStream" uid="uid://12gtxwh847g3" path="res://assets/sound/sound_pickup_fule.wav" id="14_jf2fu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0bsyh")
@@ -38,5 +42,19 @@ autostart = true
 
 [node name="GameOver" parent="." instance=ExtResource("9_1dwne")]
 
+[node name="AudioStreamPlayer_intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_8lr5t")
+autoplay = true
+
+[node name="AudioStreamPlayer_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_t4twm")
+
+[node name="AudioStreamPlayer_gameover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_7xarg")
+
+[node name="AudioStreamPlayer_pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_jf2fu")
+
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_on_energy_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer_intro" to="." method="_on_audio_stream_player_intro_finished"]
