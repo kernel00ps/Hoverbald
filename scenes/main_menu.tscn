@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://51hql28ervol"]
+[gd_scene load_steps=8 format=3 uid="uid://ct3blvin6gqt0"]
 
 [ext_resource type="Texture2D" uid="uid://cmgymkudetfv" path="res://assets/sprites/logo_160x64.png" id="1_1lyvp"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qc4hd"]
 [ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_xqkqr"]
 [ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="2_rfisl"]
 [ext_resource type="Script" path="res://scripts/sound_button.gd" id="5_0wirc"]
+[ext_resource type="PackedScene" uid="uid://dnkgvrhct02v3" path="res://scenes/crt.tscn" id="6_uijvc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdnrf"]
 
@@ -22,6 +23,7 @@ position = Vector2(128, 112)
 texture = ExtResource("1_xqkqr")
 
 [node name="logo" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(128, 62)
 texture = ExtResource("1_1lyvp")
 
@@ -41,6 +43,7 @@ grow_vertical = 0
 pivot_offset = Vector2(92, 85.5)
 
 [node name="play_button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
 theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
@@ -54,6 +57,7 @@ text = "Play"
 flat = true
 
 [node name="controls_button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
 theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
@@ -67,6 +71,7 @@ text = "How to Play"
 flat = true
 
 [node name="sound_button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
 theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
@@ -81,6 +86,7 @@ flat = true
 script = ExtResource("5_0wirc")
 
 [node name="credits_button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
 theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
@@ -94,6 +100,7 @@ text = "Credits"
 flat = true
 
 [node name="quit_button" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
 theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
@@ -105,6 +112,8 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hdnrf")
 text = "Quit"
 flat = true
+
+[node name="CRT" parent="." instance=ExtResource("6_uijvc")]
 
 [connection signal="pressed" from="VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/controls_button" to="." method="_on_controls_button_pressed"]
