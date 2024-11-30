@@ -9,5 +9,6 @@ func _process(delta: float) -> void:
 	position.x -= offset
 
 func _on_body_entered(body: Node2D) -> void:
-	emit_signal("picked_up")
-	queue_free()
+	if body.name == "Player":
+		emit_signal("picked_up")
+		queue_free()

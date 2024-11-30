@@ -3,8 +3,6 @@ extends Node
 @export var obstacle_scene : PackedScene
 @export var pickup_energy_scene: PackedScene
 
-const OBSTACLE_DELAY: int = 100
-const OBSTACLE_RANGE: int = 200
 
 var game_running : bool
 var game_over : bool
@@ -19,14 +17,17 @@ var ground_height : int
 var obstacle_list: Node2D
 var pickup_energy_list: Node2D
 
+var game_over_screen: CanvasLayer 
+
 func _ready() -> void:
 	obstacle_list = get_node("Obstacles")
 	pickup_energy_list = get_node("PickUpEnergies")
 	viewport_size = get_viewport().get_visible_rect().size
 	viewport_width = viewport_size.x
 	viewport_height = viewport_size.y
+	game_over_screen = get_node("GameOver")
+	
 	new_game()
-	generate_pickup_energy()
 	
 func new_game():
 	game_running = false
@@ -46,28 +47,27 @@ func generate_obstacles() -> void:
 	remove_offscreen_obstacles()
 	
 	var obstacle: Obstacle = obstacle_scene.instantiate()
-	obstacle.position.x = viewport_width + OBSTACLE_DELAY
-	obstacle.position.y = randi_range(-OBSTACLE_RANGE, OBSTACLE_RANGE)
+
 	obstacle.hit_obstable.connect(player_hit_obstacle)
 	obstacle_list.add_child(obstacle)
 	 
 func remove_offscreen_obstacles() -> void:
 	for obstacle in obstacle_list.get_children():
-		if obstacle.position.x < -OBSTACLE_DELAY:
+		if obstacle.position.x < -Globals.OBSTACLE_DELAY:
 			obstacle.queue_free()
 	
 func generate_pickup_energy() -> void:
 	remove_offscreen_pickups()
 	
 	var pickup_energy: PickupEnergy = pickup_energy_scene.instantiate()
-	pickup_energy.position.x = viewport_width + OBSTACLE_DELAY
-	pickup_energy.position.y = randi_range(-OBSTACLE_RANGE, OBSTACLE_RANGE)
+	pickup_energy.position.x = viewport_width + Globals.OBSTACLE_DELAY
+	pickup_energy.position.y = randi_range(-Globals.OBSTACLE_RANGE, Globals.OBSTACLE_RANGE)
 	pickup_energy.picked_up.connect(player_picked_up_energy)
 	pickup_energy_list.add_child(pickup_energy)
 
 func remove_offscreen_pickups() -> void:
 	for pickup in pickup_energy_list.get_children():
-		if pickup.position.x < -OBSTACLE_DELAY:
+		if pickup.position.x < -Globals.OBSTACLE_DELAY:
 			pickup.queue_free()
 
 func _on_obstacle_timer_timeout() -> void:
@@ -75,7 +75,9 @@ func _on_obstacle_timer_timeout() -> void:
 	pass
 
 func player_hit_obstacle() -> void:
-	pass
+	if not Globals.CHEAT_INVINCIBLE:
+		game_over_screen.game_over()
+	#print("obstacle_hit")
 
 func player_picked_up_energy() -> void:
 	Globals.fuel_modifier = Globals.PICKUP_VALUE

@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 func update():
 	var value = Globals.current_fuel
 	fuel_bar.value = value
-	print(value)
+	#print(value)
 	if(value >= 0 && value <= Globals.MAX_FUEL):
 		if(Globals.current_fuel + Globals.fuel_modifier > Globals.MAX_FUEL):
 			Globals.current_fuel = Globals.MAX_FUEL

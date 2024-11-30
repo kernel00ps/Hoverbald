@@ -5,6 +5,73 @@
 [ext_resource type="Texture2D" uid="uid://b7s5yqq4rsepv" path="res://assets/sprites/laser_bottompart_32x32.png" id="3_cvygc"]
 [ext_resource type="Texture2D" uid="uid://dstmxx8ugk44u" path="res://assets/sprites/laser_middlepart_32x32.png" id="4_8bmc2"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a82hk"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hx34"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57e3m"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbhef"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diwtu"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmk6y"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsook"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trca2"]
+atlas = ExtResource("4_8bmc2")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tl8sc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a82hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hx34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57e3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbhef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diwtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmk6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsook")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trca2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhpof"]
+size = Vector2(18.0295, 32.0603)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xpr3"]
 size = Vector2(28.0725, 28.9709)
 
@@ -71,73 +138,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a82hk"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3hx34"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_57e3m"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sbhef"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_diwtu"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kmk6y"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hsook"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_trca2"]
-atlas = ExtResource("4_8bmc2")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tl8sc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a82hk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3hx34")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_57e3m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sbhef")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_diwtu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kmk6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hsook")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_trca2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhpof"]
-size = Vector2(20, 74)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a47u"]
 size = Vector2(27.7003, 28.9274)
@@ -209,10 +209,22 @@ animations = [{
 [node name="Obstacle" type="Node2D"]
 script = ExtResource("1_xlgrv")
 
+[node name="MiddleArea" type="Area2D" parent="."]
+position = Vector2(0, 50)
+scale = Vector2(1, 2.2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiddleArea"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tl8sc")
+frame = 2
+frame_progress = 0.25598
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
+shape = SubResource("RectangleShape2D_qhpof")
+
 [node name="UpperArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArea"]
-position = Vector2(-0.0144567, 1.51455)
 shape = SubResource("RectangleShape2D_1xpr3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UpperArea"]
@@ -221,33 +233,18 @@ sprite_frames = SubResource("SpriteFrames_6kqde")
 frame = 2
 frame_progress = 0.855855
 
-[node name="MiddleArea" type="Area2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiddleArea"]
-texture_filter = 1
-position = Vector2(0, 49.096)
-scale = Vector2(1, 2.18959)
-sprite_frames = SubResource("SpriteFrames_tl8sc")
-frame = 2
-frame_progress = 0.25598
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
-position = Vector2(0, 51)
-shape = SubResource("RectangleShape2D_qhpof")
-
 [node name="LowerArea" type="Area2D" parent="."]
+position = Vector2(0, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArea"]
-position = Vector2(-0.100164, 98.4158)
 shape = SubResource("RectangleShape2D_4a47u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LowerArea"]
 texture_filter = 1
-position = Vector2(0, 100)
 sprite_frames = SubResource("SpriteFrames_gsyy0")
 frame = 6
 frame_progress = 0.91706
 
-[connection signal="body_entered" from="UpperArea" to="." method="_on_upper_area_body_entered"]
 [connection signal="body_entered" from="MiddleArea" to="." method="_on_middle_area_body_entered"]
+[connection signal="body_entered" from="UpperArea" to="." method="_on_upper_area_body_entered"]
 [connection signal="body_entered" from="LowerArea" to="." method="_on_lower_area_body_entered"]
