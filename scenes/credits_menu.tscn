@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://pe4ptnaejm75"]
+
+[ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="1_14oto"]
+[ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_fsajb"]
+[ext_resource type="Script" path="res://scripts/back_button.gd" id="3_gxjsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dsc0"]
+
+[node name="credits_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(128, 112)
+texture = ExtResource("1_fsajb")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.5
+offset_top = -42.5
+offset_right = 106.5
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_14oto")
+theme_override_font_sizes/font_size = 8
+text = "CREDITS
+------------------
+Game made for the RetroGameJam 2024
+
+Made by:
+Shonja 1
+Shonja 2
+Shonja 3
+Shonja 4
+
+Font: PressStart2P by CodeMan38"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -34.0
+offset_right = 20.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(20, 8)
+theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_hover_color = Color(0.847059, 0, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_focus_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_colors/font_color = Color(0.580392, 0, 0.517647, 1)
+theme_override_fonts/font = ExtResource("1_14oto")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8dsc0")
+text = "Back"
+flat = true
+script = ExtResource("3_gxjsw")
+
+[connection signal="pressed" from="back_button" to="back_button" method="_on_pressed"]
