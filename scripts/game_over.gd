@@ -10,4 +10,5 @@ func _on_retry_pressed() -> void:
 	
 func game_over() -> void:
 	get_tree().paused = true
+	get_parent().play_gameover()
 	self.show()
