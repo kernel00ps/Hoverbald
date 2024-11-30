@@ -78,10 +78,7 @@ func player_hit_obstacle() -> void:
 
 func player_picked_up_energy() -> void:
 	print("Signal recieved in player")
-	if Globals.current_fuel + Globals.PICK_UP_ENERGY_VALUE > 100:
-		Globals.current_fuel = 100
-	else:
-		Globals.current_fuel += Globals.PICK_UP_ENERGY_VALUE
+	Globals.fuel_modifier = Globals.PICKUP_VALUE
 
 func _on_energy_timer_timeout() -> void:
 	generate_pickup_energy()

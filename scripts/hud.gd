@@ -17,18 +17,30 @@ func _ready() -> void:
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	update()
+	pass
 
 func update():
-	var value = Globals.current_fuel * 100 / Globals.MAX_FUEL
+	var value = Globals.current_fuel
 	fuel_bar.value = value
-	if(value > 0):
-		Globals.current_fuel -= 0.05
-		progress.scale.x -= bar_size * 0.05 / 100
-
+	print(value)
+	if(value >= 0 && value <= Globals.MAX_FUEL):
+		if(Globals.current_fuel + Globals.fuel_modifier > Globals.MAX_FUEL):
+			Globals.current_fuel = Globals.MAX_FUEL
+			progress.scale.x = 1
+		elif(Globals.current_fuel + Globals.fuel_modifier < 0):
+			Globals.current_fuel = 0
+			progress.scale.x = 0
+		else:
+			Globals.current_fuel += Globals.fuel_modifier
+			progress.scale.x += bar_size * Globals.fuel_modifier / 100
+	Globals.fuel_modifier = Globals.DEPLETION_RATE
+		
 func _on_timer_timeout() -> void:
 	seconds += 1
 	if(seconds == 60):
 		seconds = 0
 		minutes += 1
 	time_label.set_text(str(minutes, ":", str(seconds).pad_zeros(2)))
+
+func _on_fuel_update_timer_timeout() -> void:
+	update()

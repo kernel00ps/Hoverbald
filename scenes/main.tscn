@@ -28,7 +28,7 @@ pickup_energy_scene = ExtResource("3_h4b1p")
 autostart = true
 
 [node name="EnergyTimer" type="Timer" parent="."]
-wait_time = 0.809
+wait_time = 2.0
 autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("7_pxdqj")]
