@@ -52,8 +52,7 @@ func _process(delta: float) -> void:
 	tile_map_upper.position.x -= offset
 	
 	tracker += offset
-	
-	if tracker >= viewport_width / 2:
+	if tracker >= viewport_width:
 		tracker = 0
 		generate_floor(last_generated_cell_position_lower, 20, true)
 		generate_floor(last_generated_cell_position_upper, 20, false)
@@ -71,7 +70,7 @@ func generate_floor(start_cords: Vector2i, row_length: int, is_lower: bool):
 			last_generated_cell_position_upper = cords
 	tracker += row_length
 	generate_spikes(row_length)
-	remove_offscreen_tiles()
+	remove_offscreen_spikes(row_length)
 
 func remove_offscreen_tiles():
 	pass
@@ -103,11 +102,10 @@ func generate_spikes(row_length: int) -> void:
 		
 		spikes.spike_hit.connect(spike_hit)
 		spikes_list.add_child(spikes)
-	remove_offscreen_spikes()
-
-func remove_offscreen_spikes() -> void:
+	
+func remove_offscreen_spikes(border: int) -> void:
 	for spikes in spikes_list.get_children():
-		if spikes.position.x < -Globals.OBSTACLE_DELAY:
+		if spikes.position.x < -Globals.OBSTACLE_DELAY * 2:
 			spikes.queue_free()
 
 func spike_hit() -> void:
