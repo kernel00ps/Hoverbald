@@ -13,6 +13,9 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("UP"):
 		velocity.y += JUMP_VELOCITY
+		
+	if Input.is_action_pressed("DOWN"):
+		velocity.y -= JUMP_VELOCITY / 2 
 	
 	var direction = Input.get_axis("LEFT", "RIGHT")
 	
