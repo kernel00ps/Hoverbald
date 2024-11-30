@@ -71,6 +71,7 @@ animations = [{
 size = Vector2(14, 26)
 
 [node name="PickupEnergy" type="Area2D"]
+collision_layer = 4
 script = ExtResource("1_oys1i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

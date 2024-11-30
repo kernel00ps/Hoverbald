@@ -26,6 +26,7 @@ func _ready() -> void:
 	viewport_width = viewport_size.x
 	viewport_height = viewport_size.y
 	new_game()
+	generate_pickup_energy()
 	
 func new_game():
 	game_running = false
@@ -77,9 +78,7 @@ func player_hit_obstacle() -> void:
 	pass
 
 func player_picked_up_energy() -> void:
-	print("Signal recieved in player")
 	Globals.fuel_modifier = Globals.PICKUP_VALUE
 
 func _on_energy_timer_timeout() -> void:
 	generate_pickup_energy()
-	print("ener")
