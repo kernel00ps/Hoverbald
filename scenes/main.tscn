@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://w1kwmbmrpyeu"]
+[gd_scene load_steps=16 format=3 uid="uid://w1kwmbmrpyeu"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_0bsyh"]
 [ext_resource type="PackedScene" uid="uid://c00whd1nguasd" path="res://scenes/obstacle.tscn" id="2_oj32y"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://svqvb4sxt2we" path="res://assets/sound/music/song_main_1.wav" id="12_t4twm"]
 [ext_resource type="AudioStream" uid="uid://88eflf8eh02w" path="res://assets/sound/sound_crash_1.wav" id="13_7xarg"]
 [ext_resource type="AudioStream" uid="uid://12gtxwh847g3" path="res://assets/sound/sound_pickup_fule.wav" id="14_jf2fu"]
+[ext_resource type="PackedScene" uid="uid://dnkgvrhct02v3" path="res://scenes/crt.tscn" id="15_d0751"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0bsyh")
@@ -54,6 +55,8 @@ stream = ExtResource("13_7xarg")
 
 [node name="AudioStreamPlayer_pickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_jf2fu")
+
+[node name="CRT" parent="." instance=ExtResource("15_d0751")]
 
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer" to="." method="_on_energy_timer_timeout"]
