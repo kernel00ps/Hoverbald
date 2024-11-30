@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 func _process(delta: float) -> void:
 	#position.x += Globals.CAMERA_MOTION_BASE_SPEED * Globals.camera_speed_modifier * delta
 	pass

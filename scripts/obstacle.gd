@@ -9,7 +9,6 @@ const MAX_HEIGHT: float = 128.0
 const PIXEL_SIZE: int = 16
 const BASE_SCALE: float = 2.2
 
-
 var upper_area_collision: CollisionShape2D
 var middle_area_collision: CollisionShape2D
 var lower_area_collision: CollisionShape2D
@@ -39,7 +38,7 @@ func _ready() -> void:
 	#ovde ide kuršlus 
 	randomize_obstacle()
 	#ovo ga stavi na desni kraj ekrana
-	position.x = viewport_width + randi_range(Globals.OBSTACLE_DELAY - PIXEL_SIZE * 4, Globals.OBSTACLE_DELAY + PIXEL_SIZE * 4)
+	position.x = viewport_width + randi_range(Globals.OBSTACLE_DELAY - PIXEL_SIZE * 2, Globals.OBSTACLE_DELAY + PIXEL_SIZE * 2)
 	
 	upper_area_sprite.play("default")
 	middle_area_sprite.play("default")

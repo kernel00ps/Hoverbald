@@ -45,9 +45,7 @@ func start_game():
 
 func generate_obstacles() -> void:
 	remove_offscreen_obstacles()
-	
 	var obstacle: Obstacle = obstacle_scene.instantiate()
-
 	obstacle.hit_obstable.connect(player_hit_obstacle)
 	obstacle_list.add_child(obstacle)
 	 
@@ -58,10 +56,7 @@ func remove_offscreen_obstacles() -> void:
 	
 func generate_pickup_energy() -> void:
 	remove_offscreen_pickups()
-	
 	var pickup_energy: PickupEnergy = pickup_energy_scene.instantiate()
-	pickup_energy.position.x = viewport_width + Globals.OBSTACLE_DELAY
-	pickup_energy.position.y = randi_range(-Globals.OBSTACLE_RANGE, Globals.OBSTACLE_RANGE)
 	pickup_energy.picked_up.connect(player_picked_up_energy)
 	pickup_energy_list.add_child(pickup_energy)
 
