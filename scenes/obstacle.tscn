@@ -72,9 +72,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhpof"]
 size = Vector2(18.0295, 32.0603)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xpr3"]
-size = Vector2(28.0725, 28.9709)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jnfb"]
 atlas = ExtResource("2_87tac")
 region = Rect2(64, 32, 32, 32)
@@ -139,8 +136,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a47u"]
-size = Vector2(27.7003, 28.9274)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xpr3"]
+size = Vector2(23.8804, 20.4272)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ob3sl"]
 atlas = ExtResource("3_cvygc")
@@ -206,6 +203,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a47u"]
+size = Vector2(23.7028, 20.4411)
+
 [node name="Obstacle" type="Node2D"]
 script = ExtResource("1_xlgrv")
 
@@ -224,26 +224,28 @@ shape = SubResource("RectangleShape2D_qhpof")
 
 [node name="UpperArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArea"]
-shape = SubResource("RectangleShape2D_1xpr3")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UpperArea"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6kqde")
 frame = 2
 frame_progress = 0.855855
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArea"]
+position = Vector2(0.0687537, 4.27184)
+shape = SubResource("RectangleShape2D_1xpr3")
+
 [node name="LowerArea" type="Area2D" parent="."]
 position = Vector2(0, 100)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArea"]
-shape = SubResource("RectangleShape2D_4a47u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LowerArea"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_gsyy0")
 frame = 6
 frame_progress = 0.91706
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArea"]
+position = Vector2(-0.0179448, -4.24316)
+shape = SubResource("RectangleShape2D_4a47u")
 
 [connection signal="body_entered" from="MiddleArea" to="." method="_on_middle_area_body_entered"]
 [connection signal="body_entered" from="UpperArea" to="." method="_on_upper_area_body_entered"]

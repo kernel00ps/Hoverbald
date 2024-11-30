@@ -77,7 +77,8 @@ func resize_middle_area(new_height: float):
 	#spawnovanje gornjeg i donjeg dela
 	$UpperArea.position.y = randi_range(upper_y, -10)
 	$LowerArea.position.y = randi_range(10, lower_y)
-	
+
+	#ne pitaj zasto je ovako, samo sam ga drkao dok nije proradilo	
 	var gap_height = $LowerArea.position.y - $UpperArea.position.y - PIXEL_SIZE * 2
 
 	if gap_height < PIXEL_SIZE:

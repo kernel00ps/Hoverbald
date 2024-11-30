@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcthkt21uc2w8"]
+[gd_scene load_steps=7 format=3 uid="uid://dcthkt21uc2w8"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_30inu"]
 [ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_b4ln1"]
 [ext_resource type="TileSet" uid="uid://sr0i7cdf6kxd" path="res://data/background.tres" id="3_858da"]
+[ext_resource type="PackedScene" uid="uid://c3gw0tn2sjuod" path="res://scenes/spikes.tscn" id="3_y7mw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0w5j"]
 size = Vector2(12, 160)
@@ -13,6 +14,7 @@ size = Vector2(16, 160)
 [node name="Background" type="Node2D"]
 script = ExtResource("1_30inu")
 tile_map_atlas = ExtResource("3_858da")
+spikes_scene = ExtResource("3_y7mw7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_b4ln1")
@@ -38,3 +40,5 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 position = Vector2(139, 16)
 shape = SubResource("RectangleShape2D_jpjrm")
+
+[node name="Spikes" type="Node2D" parent="."]

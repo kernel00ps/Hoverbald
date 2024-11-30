@@ -2,7 +2,7 @@ extends Node
 
 @export var obstacle_scene : PackedScene
 @export var pickup_energy_scene: PackedScene
-
+@export var spikes_scene: PackedScene
 
 var game_running : bool
 var game_over : bool
