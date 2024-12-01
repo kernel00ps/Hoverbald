@@ -18,6 +18,7 @@ var pickup_energy_list: Node2D
 
 var game_over_screen: CanvasLayer 
 
+const SPAWN_DISTANCE: int = 100
 
 func _ready() -> void:
 	obstacle_list = get_node("Obstacles")
@@ -65,6 +66,9 @@ func generate_pickup_energy() -> void:
 	var pickup_energy: PickupEnergy = pickup_energy_scene.instantiate()
 	pickup_energy.picked_up.connect(player_picked_up_energy)
 	pickup_energy_list.add_child(pickup_energy)
+	for obstacle in obstacle_list.get_children():
+		if abs(pickup_energy.position.x - obstacle.position.x) < SPAWN_DISTANCE:
+			pickup_energy.position.x += SPAWN_DISTANCE
 
 func remove_offscreen_pickups() -> void:
 	for pickup in pickup_energy_list.get_children():
