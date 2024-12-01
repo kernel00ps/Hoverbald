@@ -7,7 +7,7 @@ func _ready() -> void:
 		$AudioStreamPlayer_click.play()
 	Globals.play_menu_click_sound = false
 	$ShonjaButton.modulate = Color(1, 1, 1, 0)
-
+	
 func _on_play_button_pressed() -> void:
 	if Globals.is_sound_on:
 		MenuMusicPlayer._stop_menu_music()
@@ -19,6 +19,10 @@ func _on_controls_button_pressed() -> void:
 
 func _on_crt_button_pressed() -> void:
 	Globals.is_crt_on = not Globals.is_crt_on
+	if Globals.is_crt_on:
+		$CRT.visible = true
+	else:
+		$CRT.visible = false
 
 func _on_sound_button_pressed() -> void:
 	if Globals.is_sound_on:
