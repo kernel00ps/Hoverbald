@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct3blvin6gqt0"]
+[gd_scene load_steps=11 format=3 uid="uid://ct3blvin6gqt0"]
 
 [ext_resource type="Texture2D" uid="uid://cmgymkudetfv" path="res://assets/sprites/logo_160x64.png" id="1_1lyvp"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qc4hd"]
@@ -32,7 +32,7 @@ position = Vector2(128, 53)
 texture = ExtResource("1_1lyvp")
 
 [node name="logo2" type="Sprite2D" parent="."]
-position = Vector2(128, 62)
+position = Vector2(128, 53)
 texture = ExtResource("4_etng7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
