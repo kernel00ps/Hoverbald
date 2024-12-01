@@ -3,7 +3,7 @@ render_mode unshaded, skip_vertex_transform;
 
 uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap;
 
-const float curvature = 7.0;
+const float curvature = 14.0;
 const float viewport_width = 256.0;
 const float vignette_multiplier = 0.0;
 
