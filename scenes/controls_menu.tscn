@@ -38,12 +38,17 @@ theme_override_colors/font_color = Color(0.972549, 0.470588, 0.972549, 1)
 theme_override_fonts/font = ExtResource("1_uk3nv")
 theme_override_font_sizes/font_size = 8
 text = "HOW TO PLAY
-------------------
+-----------------------
+You stole a hoverboard.
+Now you need to escape.
 
-PRESS PLAY TO PLAY
->:DDDDD
+Use WASD to move
+and dodge obstacles.
 
-:PPP"
+The goal is to go as
+far as you can.
+
+Have fun! :D"
 horizontal_alignment = 1
 
 [node name="back_button" type="Button" parent="."]

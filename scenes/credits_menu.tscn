@@ -20,37 +20,6 @@ grow_vertical = 2
 position = Vector2(128, 112)
 texture = ExtResource("1_fsajb")
 
-[node name="Label" type="Label" parent="."]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -106.5
-offset_top = -42.5
-offset_right = 106.5
-offset_bottom = 42.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.972549, 0.470588, 0.972549, 1)
-theme_override_fonts/font = ExtResource("1_14oto")
-theme_override_font_sizes/font_size = 8
-text = "CREDITS
-------------------
-Game made for the RetroGameJam 2024
-
-Made by:
-Shonja 1
-Shonja 2
-Shonja 3
-Shonja 4
-
-Font: PressStart2P by CodeMan38"
-horizontal_alignment = 1
-autowrap_mode = 2
-
 [node name="back_button" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 1
@@ -82,5 +51,51 @@ script = ExtResource("3_gxjsw")
 stream = ExtResource("4_td6dx")
 
 [node name="CRT" parent="back_button" instance=ExtResource("4_73oov")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -92.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 0)
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_14oto")
+theme_override_font_sizes/font_size = 8
+text = "CREDITS
+-----------------------
+Entry for the 
+RetroGameJam 2024
+
+Made by:
+byk
+kernel00ps
+DevDive
+StevanT
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.470588, 0.972549, 1)
+theme_override_fonts/font = ExtResource("1_14oto")
+theme_override_font_sizes/font_size = 8
+text = "Font: PressStart2P
+by CodeMan38
+Sounds: ChipTone by SFBGames
+Music: BeepBox by John Nesky"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="back_button" to="back_button" method="_on_pressed"]
