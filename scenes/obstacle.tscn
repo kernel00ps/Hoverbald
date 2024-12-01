@@ -213,7 +213,7 @@ script = ExtResource("1_xlgrv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiddleArea"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1i77g")
-frame_progress = 0.645087
+frame_progress = 0.420456
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
 position = Vector2(0, 0.032135)
@@ -224,7 +224,7 @@ shape = SubResource("RectangleShape2D_qhpof")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UpperArea"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bsp00")
-frame_progress = 0.884388
+frame_progress = 0.659759
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArea"]
 position = Vector2(-0.296124, 1.24512)

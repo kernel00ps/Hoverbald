@@ -88,7 +88,7 @@ func resize_middle_area(new_height: float):
 			$LowerArea.position.y -= PIXEL_SIZE
 
 	#ne pitaj zasto je ovako, samo sam ga drkao dok nije proradilo	
-	var gap_height = $LowerArea.position.y - $UpperArea.position.y - PIXEL_SIZE 
+	var gap_height = $LowerArea.position.y - $UpperArea.position.y 
 
 	if gap_height < PIXEL_SIZE:
 		gap_height = PIXEL_SIZE

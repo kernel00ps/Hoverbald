@@ -33,6 +33,7 @@ spikes_scene = ExtResource("4_plpbp")
 [node name="PickUpEnergies" type="Node2D" parent="."]
 
 [node name="ObstacleTimer" parent="." instance=ExtResource("5_sq6i2")]
+wait_time = 2.0
 autostart = true
 
 [node name="EnergyTimer" type="Timer" parent="."]

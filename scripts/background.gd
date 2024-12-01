@@ -21,7 +21,7 @@ const PIXEL_SIZE: float = 16
 const GRID_WIDTH: int = 8
 const TILE_SOURCE_ID = 0
 const BUFFER: int = 30
-const PERCENT_SPIKES: int = 20
+const PERCENT_SPIKES: int = 10
 
 func _ready() -> void:
 	tile_map_lower = get_node("TileMapLower")

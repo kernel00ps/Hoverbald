@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_qc4hd"]
 [ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_xqkqr"]
 [ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="2_rfisl"]
+[ext_resource type="Texture2D" uid="uid://cim2t7jt10epr" path="res://assets/sprites/logo_2_160x64.png" id="4_etng7"]
 [ext_resource type="Script" path="res://scripts/sound_button.gd" id="5_0wirc"]
 [ext_resource type="Script" path="res://scenes/crt_button.gd" id="6_51xtr"]
 [ext_resource type="PackedScene" uid="uid://dnkgvrhct02v3" path="res://scenes/crt.tscn" id="6_uijvc"]
@@ -25,9 +26,14 @@ position = Vector2(128, 112)
 texture = ExtResource("1_xqkqr")
 
 [node name="logo" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(128, 53)
 texture = ExtResource("1_1lyvp")
+
+[node name="logo2" type="Sprite2D" parent="."]
+position = Vector2(128, 62)
+texture = ExtResource("4_etng7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -139,10 +145,10 @@ anchor_left = 0.301
 anchor_top = 0.23
 anchor_right = 0.301
 anchor_bottom = 0.23
-offset_left = -22.056
-offset_top = -9.52
-offset_right = 123.944
-offset_bottom = 19.48
+offset_left = -23.056
+offset_top = -8.52
+offset_right = 122.944
+offset_bottom = 20.48
 
 [node name="AudioStreamPlayer_pickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_oycya")
