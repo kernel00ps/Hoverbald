@@ -72,7 +72,6 @@ func _on_obstacle_timer_timeout() -> void:
 func player_hit_obstacle() -> void:
 	if not Globals.CHEAT_INVINCIBLE:
 		game_over_screen.game_over()
-	print("obstacle_hit")
 
 func player_picked_up_energy() -> void:
 	Globals.fuel_modifier = Globals.PICKUP_VALUE
@@ -82,10 +81,13 @@ func _on_energy_timer_timeout() -> void:
 	generate_pickup_energy()
 	
 func play_gameover() -> void:
-	$AudioStreamPlayer_gameover.play()        
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_gameover.play()        
 
 func play_pickup() -> void:
-	$AudioStreamPlayer_pickup.play()
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_pickup.play()
 
 func _on_audio_stream_player_intro_finished() -> void:
-	$AudioStreamPlayer_music.play()
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_music.play()
