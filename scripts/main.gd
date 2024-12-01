@@ -27,8 +27,7 @@ func _ready() -> void:
 	
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_intro.play()
-	if not Globals.is_crt_on:
-		$CRT.get_child(0).hide()
+
 	new_game()
 	
 func new_game():
@@ -89,6 +88,10 @@ func play_gameover() -> void:
 func play_pickup() -> void:
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_pickup.play()
+	
+func play_hurt() -> void:
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_hurt.play()
 
 func _on_audio_stream_player_intro_finished() -> void:
 	if Globals.is_sound_on:

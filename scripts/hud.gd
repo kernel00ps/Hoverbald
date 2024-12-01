@@ -51,6 +51,9 @@ func _on_fuel_update_timer_timeout() -> void:
 func _on_damage_taken() -> void:
 	Globals.current_hp -= 1
 	health_bar.value -= 1
+	if Globals.current_hp > 0:
+		get_parent().play_hurt()
+
 	Globals.CHEAT_INVINCIBLE = true
 	$InvincibilityTimer.start()
 
