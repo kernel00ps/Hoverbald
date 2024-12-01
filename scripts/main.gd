@@ -27,6 +27,11 @@ func _ready() -> void:
 	
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_intro.play()
+		
+	if Globals.is_crt_on:
+		$CRT.visible = true
+	else:
+		$CRT.visible = false
 
 	new_game()
 	
