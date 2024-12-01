@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_30inu"]
 [ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_b4ln1"]
 [ext_resource type="TileSet" uid="uid://sr0i7cdf6kxd" path="res://data/background.tres" id="3_858da"]
-[ext_resource type="PackedScene" uid="uid://c3gw0tn2sjuod" path="res://scenes/spikes.tscn" id="3_y7mw7"]
+[ext_resource type="PackedScene" uid="uid://ioh3yp3yc8w0" path="res://scenes/spikes.tscn" id="3_y7mw7"]
 [ext_resource type="TileSet" uid="uid://cxnx36t51p0jq" path="res://data/background_inv.tres" id="5_twtdc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0w5j"]

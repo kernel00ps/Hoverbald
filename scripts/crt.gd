@@ -8,6 +8,3 @@ func _ready() -> void:
 	viewport_size = get_viewport().get_visible_rect().size
 	viewport_width = viewport_size.x
 	viewport_height = viewport_size.y
-	
-func _process(delta: float) -> void:
-	pass

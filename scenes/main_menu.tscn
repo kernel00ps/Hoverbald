@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="2_rfisl"]
 [ext_resource type="Texture2D" uid="uid://cim2t7jt10epr" path="res://assets/sprites/logo_2_160x64.png" id="4_etng7"]
 [ext_resource type="Script" path="res://scripts/sound_button.gd" id="5_0wirc"]
-[ext_resource type="Script" path="res://scenes/crt_button.gd" id="6_51xtr"]
 [ext_resource type="PackedScene" uid="uid://dnkgvrhct02v3" path="res://scenes/crt.tscn" id="6_uijvc"]
 [ext_resource type="AudioStream" uid="uid://4hv4clg2acnu" path="res://assets/sound/sound_click.wav" id="7_jc3xp"]
 [ext_resource type="AudioStream" uid="uid://12gtxwh847g3" path="res://assets/sound/sound_pickup_fule.wav" id="7_oycya"]
@@ -107,7 +106,6 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hdnrf")
 text = "CRT:ON"
 flat = true
-script = ExtResource("6_51xtr")
 
 [node name="credits_button" type="Button" parent="VBoxContainer"]
 texture_filter = 1

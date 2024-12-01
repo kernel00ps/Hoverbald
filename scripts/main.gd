@@ -24,6 +24,7 @@ func _ready() -> void:
 	viewport_width = viewport_size.x
 	viewport_height = viewport_size.y
 	game_over_screen = get_node("GameOver")
+	$CRT.visible = Globals.is_crt_on
 	
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_intro.play()
