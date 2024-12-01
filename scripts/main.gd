@@ -4,8 +4,6 @@ extends Node
 @export var pickup_energy_scene: PackedScene
 @export var spikes_scene: PackedScene
 
-var game_running : bool
-var game_over : bool
 const SCROLL_SPEED : int = 1
 var viewport_size: Vector2
 var viewport_width: float
@@ -25,28 +23,20 @@ func _ready() -> void:
 	viewport_height = viewport_size.y
 	game_over_screen = get_node("GameOver")
 	
+	Globals.connect("end_game", _on_end_game)
+	
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_intro.play()
 	if not Globals.is_crt_on:
 		$CRT.get_child(0).hide()
-	new_game()
-	
-func new_game():
-	game_running = false
-	game_over = false
 	
 func _input(event):
-	if(!game_over && Input.is_key_pressed(KEY_SPACE)):
-		if(!game_running):
-			start_game()
-					
-func start_game():
-	game_running = true
+	pass
 
 func generate_obstacles() -> void:
 	remove_offscreen_obstacles()
 	var obstacle: Obstacle = obstacle_scene.instantiate()
-	obstacle.hit_obstable.connect(player_hit_obstacle)
+	obstacle.hit_obstacle.connect(player_hit_obstacle)
 	obstacle_list.add_child(obstacle)
 	 
 func remove_offscreen_obstacles() -> void:
@@ -97,3 +87,6 @@ func _on_audio_stream_player_intro_finished() -> void:
 func _on_speed_up_timer_timeout() -> void:
 	Globals.camera_speed_modifier += 10
 	$ObstacleTimer.wait_time *= 0.95
+
+func _on_end_game() -> void:
+	game_over_screen.game_over()
