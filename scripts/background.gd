@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var tile_map_atlas: Resource
 @export var spikes_scene: PackedScene
 
 var tile_map_upper: TileMapLayer
@@ -63,11 +62,14 @@ func generate_floor(start_cords: Vector2i, row_length: int, is_lower: bool):
 		var atlas_cords = Vector2(random_tile_id, 0)
 		
 		var cords: Vector2i = Vector2i(start_cords.x + i, start_cords.y)
-		tile_map_lower.set_cell(cords, TILE_SOURCE_ID, atlas_cords)
+		
 		if is_lower: 
 			last_generated_cell_position_lower = cords
+			tile_map_lower.set_cell(cords, TILE_SOURCE_ID, atlas_cords)
 		else:
 			last_generated_cell_position_upper = cords
+			tile_map_upper.set_cell(cords, 1, atlas_cords)
+			
 	tracker += row_length
 	generate_spikes(row_length)
 	remove_offscreen_spikes(row_length)

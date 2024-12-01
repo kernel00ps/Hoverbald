@@ -25,6 +25,9 @@ func _ready() -> void:
 	viewport_height = viewport_size.y
 	game_over_screen = get_node("GameOver")
 	
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_intro.play()
+	
 	new_game()
 	
 func new_game():
@@ -80,10 +83,13 @@ func _on_energy_timer_timeout() -> void:
 	generate_pickup_energy()
 	
 func play_gameover() -> void:
-	$AudioStreamPlayer_gameover.play()        
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_gameover.play()        
 
 func play_pickup() -> void:
-	$AudioStreamPlayer_pickup.play()
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_pickup.play()
 
 func _on_audio_stream_player_intro_finished() -> void:
-	$AudioStreamPlayer_music.play()
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_music.play()

@@ -20,3 +20,6 @@ var fuel_modifier: float = DEPLETION_RATE # for depleting fuel and refueling
 var current_hp: int = MAX_HP
 
 signal damage_taken
+
+var is_sound_on: bool = true
+var is_shonja: bool = false
