@@ -36,13 +36,6 @@ func _ready() -> void:
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_intro.play()
 		
-	if Globals.is_crt_on:
-		$CRT.visible = true
-	else:
-		$CRT.visible = false
-	if not Globals.is_crt_on:
-		$CRT.get_child(0).hide()
-	
 func _input(event):
 	pass
 
