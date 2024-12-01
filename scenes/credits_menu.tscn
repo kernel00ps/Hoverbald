@@ -83,6 +83,6 @@ script = ExtResource("3_gxjsw")
 [node name="AudioStreamPlayer_click" type="AudioStreamPlayer" parent="back_button"]
 stream = ExtResource("4_td6dx")
 
-[node name="CRT" parent="." instance=ExtResource("4_73oov")]
+[node name="CRT" parent="back_button" instance=ExtResource("4_73oov")]
 
 [connection signal="pressed" from="back_button" to="back_button" method="_on_pressed"]

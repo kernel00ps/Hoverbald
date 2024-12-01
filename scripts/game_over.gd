@@ -9,6 +9,7 @@ func _on_retry_pressed() -> void:
 	get_tree().reload_current_scene()
 	Globals.current_hp = Globals.MAX_HP
 	Globals.current_fuel = Globals.MAX_FUEL
+	Globals.CHEAT_INVINCIBLE = false
 	
 func game_over() -> void:
 	Globals.camera_speed_modifier = 1

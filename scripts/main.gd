@@ -6,6 +6,7 @@ extends Node
 
 var game_running : bool
 var game_over : bool
+
 const SCROLL_SPEED : int = 1
 var viewport_size: Vector2
 var viewport_width: float
@@ -17,6 +18,7 @@ var pickup_energy_list: Node2D
 
 var game_over_screen: CanvasLayer 
 
+
 func _ready() -> void:
 	obstacle_list = get_node("Obstacles")
 	pickup_energy_list = get_node("PickUpEnergies")
@@ -26,27 +28,31 @@ func _ready() -> void:
 	game_over_screen = get_node("GameOver")
 	$CRT.visible = Globals.is_crt_on
 	
+	Globals.connect("end_game", _on_end_game)
+	
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_intro.play()
+		
+	if Globals.is_crt_on:
+		$CRT.visible = true
+	else:
+		$CRT.visible = false
 
 	new_game()
 	
 func new_game():
 	game_running = false
 	game_over = false
+	if not Globals.is_crt_on:
+		$CRT.get_child(0).hide()
 	
 func _input(event):
-	if(!game_over && Input.is_key_pressed(KEY_SPACE)):
-		if(!game_running):
-			start_game()
-					
-func start_game():
-	game_running = true
+	pass
 
 func generate_obstacles() -> void:
 	remove_offscreen_obstacles()
 	var obstacle: Obstacle = obstacle_scene.instantiate()
-	obstacle.hit_obstable.connect(player_hit_obstacle)
+	obstacle.hit_obstacle.connect(player_hit_obstacle)
 	obstacle_list.add_child(obstacle)
 	 
 func remove_offscreen_obstacles() -> void:
@@ -101,3 +107,6 @@ func _on_audio_stream_player_intro_finished() -> void:
 func _on_speed_up_timer_timeout() -> void:
 	Globals.camera_speed_modifier += 10
 	$ObstacleTimer.wait_time *= 0.95
+
+func _on_end_game() -> void:
+	game_over_screen.game_over()
