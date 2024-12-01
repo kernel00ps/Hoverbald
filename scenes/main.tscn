@@ -37,7 +37,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="EnergyTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 autostart = true
 
 [node name="SpeedUpTimer" type="Timer" parent="."]
