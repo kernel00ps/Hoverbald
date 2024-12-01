@@ -14,6 +14,7 @@ func _ready() -> void:
 	var upper_y: int = -1 * (viewport_height / 2) + PIXEL_SIZE * 4
 	position.x = viewport_width + Globals.OBSTACLE_DELAY
 	position.y = randi_range(lower_y, upper_y)
+	scale *= 0.8
 
 func _process(delta: float) -> void:
 	var offset: float = Globals.CAMERA_MOTION_BASE_SPEED * Globals.camera_speed_modifier * delta

@@ -77,16 +77,25 @@ func resize_middle_area(new_height: float):
 	#spawnovanje gornjeg i donjeg dela
 	$UpperArea.position.y = randi_range(upper_y, -10)
 	$LowerArea.position.y = randi_range(10, lower_y)
+	
+	#ovo proverava da li prekriva celu sliku
+	var total_height = $LowerArea.position.y - $UpperArea.position.y
+	#ako prekriva 70% ekrana onda ga smanji
+	if total_height > viewport_height * 0.35:
+		if randi() % 2 == 0:
+			$UpperArea.position.y += PIXEL_SIZE
+		else:
+			$LowerArea.position.y -= PIXEL_SIZE
 
 	#ne pitaj zasto je ovako, samo sam ga drkao dok nije proradilo	
-	var gap_height = $LowerArea.position.y - $UpperArea.position.y - PIXEL_SIZE * 2
+	var gap_height = $LowerArea.position.y - $UpperArea.position.y - PIXEL_SIZE 
 
 	if gap_height < PIXEL_SIZE:
 		gap_height = PIXEL_SIZE
 
 	$MiddleArea.position.y = ($UpperArea.position.y + $LowerArea.position.y) / 2
 
-	$MiddleArea.scale.y = gap_height / (PIXEL_SIZE * 2)
+	$MiddleArea.scale.y = gap_height / PIXEL_SIZE
 	
 	#nekad je ovo toliko malo da samo mora da nema scale
 	if $MiddleArea.scale.y < 0.001:
