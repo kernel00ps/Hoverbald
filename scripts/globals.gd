@@ -23,3 +23,4 @@ signal damage_taken
 
 var is_sound_on: bool = true
 var is_shonja: bool = false
+var is_crt_on: bool = true
