@@ -94,8 +94,8 @@ theme_override_fonts/font = ExtResource("1_14oto")
 theme_override_font_sizes/font_size = 8
 text = "Font: PressStart2P
 by CodeMan38
-Sounds: ChipTone by SFBGames
-Music: BeepBox by John Nesky"
+Audio tools: ChipTone 
+and BeepBox "
 horizontal_alignment = 1
 
 [connection signal="pressed" from="back_button" to="back_button" method="_on_pressed"]
