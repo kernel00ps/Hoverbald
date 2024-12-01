@@ -25,5 +25,4 @@ func _on_quit_button_pressed() -> void:
 func _on_shonja_button_pressed() -> void:
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_pickup.play()
-		if not Globals.is_shonja:
-			Globals.is_shonja = true
+	Globals.is_shonja = not Globals.is_shonja

@@ -10,6 +10,7 @@ func _on_retry_pressed() -> void:
 	Globals.current_hp = Globals.MAX_HP
 	
 func game_over() -> void:
+	Globals.camera_speed_modifier = 1
 	get_tree().paused = true
 	get_parent().play_gameover()
 	self.show()
