@@ -4,11 +4,6 @@ func _ready() -> void:
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_click.play()
 		
-	if Globals.is_crt_on:
-		$CRT.visible = true
-	else:
-		$CRT.visible = false
-
 func _on_pressed() -> void:
 	if Globals.is_sound_on:
 		Globals.play_menu_click_sound = true

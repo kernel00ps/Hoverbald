@@ -1,4 +1,5 @@
 extends Control
 
 func _ready() -> void:
-	$CRT.visible = Globals.is_crt_on
+	if($CRT):
+		$CRT.visible = Globals.is_crt_on
