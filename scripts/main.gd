@@ -27,6 +27,9 @@ func _ready() -> void:
 	viewport_height = viewport_size.y
 	game_over_screen = get_node("GameOver")
 	
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_intro.play()
+	
 	new_game()
 	
 func new_game():
