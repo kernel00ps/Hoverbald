@@ -7,6 +7,7 @@ func _ready() -> void:
 func _on_retry_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	Globals.current_hp = Globals.MAX_HP
 	
 func game_over() -> void:
 	get_tree().paused = true

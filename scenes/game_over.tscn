@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlnpqkpchbcd8"]
+[gd_scene load_steps=6 format=3 uid="uid://dlnpqkpchbcd8"]
 
 [ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="1_5hsvc"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_kqsub"]
 [ext_resource type="Texture2D" uid="uid://gqti0dok27f6" path="res://assets/sprites/game_over_96x64.png" id="3_jc0dl"]
+[ext_resource type="Texture2D" uid="uid://dqw85l65bbitx" path="res://assets/sprites/game_over_2_96x64.png" id="4_q8mdc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1lx8h"]
 
@@ -25,15 +26,16 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Main Menu" type="Button" parent="."]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -77.0
-offset_top = 64.0
+offset_top = 59.0
 offset_right = 75.0
-offset_bottom = 88.0
+offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0.847059, 0, 0.8, 1)
@@ -48,6 +50,7 @@ text = "Main Menu"
 flat = true
 
 [node name="Retry" type="Button" parent="."]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -74,6 +77,11 @@ flat = true
 texture_filter = 1
 position = Vector2(128, 62)
 texture = ExtResource("3_jc0dl")
+
+[node name="logo2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(128, 62)
+texture = ExtResource("4_q8mdc")
 
 [connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]

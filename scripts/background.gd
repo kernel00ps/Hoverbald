@@ -110,4 +110,6 @@ func remove_offscreen_spikes(border: int) -> void:
 
 func spike_hit() -> void:
 	if not Globals.CHEAT_INVINCIBLE:
-		game_over_screen.game_over()
+		Globals.emit_signal("damage_taken")
+		if(Globals.current_hp <= 0):
+			game_over_screen.game_over()

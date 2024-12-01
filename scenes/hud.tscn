@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://41qvysc2rxce"]
+[gd_scene load_steps=8 format=3 uid="uid://41qvysc2rxce"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_n06tn"]
 [ext_resource type="Texture2D" uid="uid://mxl1p37w4mlh" path="res://assets/sprites/bar_energy_empty_16x8.png" id="2_8mklf"]
 [ext_resource type="Texture2D" uid="uid://bfucgy2cwp2nn" path="res://assets/sprites/bar_energy_full_16x8.png" id="3_rc0dg"]
 [ext_resource type="Texture2D" uid="uid://cbuoayw4y032a" path="res://assets/sprites/bar_energy_edge_5x10.png" id="4_r7u3x"]
 [ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="5_ouj1c"]
+[ext_resource type="Texture2D" uid="uid://bsihv5co3rksm" path="res://assets/sprites/hearts_empty_32x8.png" id="6_sqhnw"]
+[ext_resource type="Texture2D" uid="uid://3g3rwndvbwiw" path="res://assets/sprites/hearts_full_32x8.png" id="7_3wcj8"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_n06tn")
@@ -13,13 +15,6 @@ script = ExtResource("1_n06tn")
 visible = false
 offset_right = 36.0
 offset_bottom = 27.0
-
-[node name="TextureFuelBar" type="TextureProgressBar" parent="."]
-visible = false
-offset_right = 56.0
-offset_bottom = 45.0
-texture_under = ExtResource("2_8mklf")
-texture_progress = ExtResource("3_rc0dg")
 
 [node name="FuelImages" type="Node2D" parent="."]
 position = Vector2(15, 10)
@@ -65,6 +60,17 @@ text = "0:00"
 
 [node name="FuelUpdateTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="TextureHealthBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = 47.0
+offset_top = 11.0
+offset_right = 79.0
+offset_bottom = 19.0
+max_value = 6.0
+value = 6.0
+texture_under = ExtResource("6_sqhnw")
+texture_progress = ExtResource("7_3wcj8")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="FuelUpdateTimer" to="." method="_on_fuel_update_timer_timeout"]

@@ -6,8 +6,6 @@ extends Node
 
 var game_running : bool
 var game_over : bool
-var scroll
-var score
 const SCROLL_SPEED : int = 1
 var viewport_size: Vector2
 var viewport_width: float
@@ -32,8 +30,6 @@ func _ready() -> void:
 func new_game():
 	game_running = false
 	game_over = false
-	score = 0
-	scroll = 0
 	
 func _input(event):
 	if(!game_over && Input.is_key_pressed(KEY_SPACE)):
@@ -71,7 +67,9 @@ func _on_obstacle_timer_timeout() -> void:
 
 func player_hit_obstacle() -> void:
 	if not Globals.CHEAT_INVINCIBLE:
-		game_over_screen.game_over()
+		Globals.emit_signal("damage_taken")
+		if(Globals.current_hp <= 0):
+			game_over_screen.game_over()
 	print("obstacle_hit")
 
 func player_picked_up_energy() -> void:
