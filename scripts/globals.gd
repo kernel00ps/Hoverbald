@@ -24,4 +24,7 @@ signal end_game
 
 var is_sound_on: bool = true
 var is_shonja: bool = false
+
+var play_menu_click_sound: bool = false
+
 var is_crt_on: bool = true
