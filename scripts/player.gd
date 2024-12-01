@@ -24,5 +24,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
+	$AnimationTree.set("parameters/Flying/blend_position", velocity.normalized())
+	
 	move_and_slide()
 	

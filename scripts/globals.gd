@@ -1,6 +1,6 @@
 extends Node
 
-const CHEAT_INVINCIBLE: bool = false
+const CHEAT_INVINCIBLE: bool = true
 
 const CAMERA_MOTION_BASE_SPEED: float = 100
 
