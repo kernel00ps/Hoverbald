@@ -54,8 +54,6 @@ script = ExtResource("3_gxjsw")
 [node name="AudioStreamPlayer_click" type="AudioStreamPlayer" parent="back_button"]
 stream = ExtResource("4_td6dx")
 
-[node name="CRT" parent="back_button" instance=ExtResource("4_73oov")]
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 14
@@ -87,7 +85,6 @@ StevanT
 
 "
 horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 texture_filter = 1
@@ -100,6 +97,5 @@ by CodeMan38
 Sounds: ChipTone by SFBGames
 Music: BeepBox by John Nesky"
 horizontal_alignment = 1
-autowrap_mode = 2
 
 [connection signal="pressed" from="back_button" to="back_button" method="_on_pressed"]

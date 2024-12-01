@@ -3,6 +3,8 @@ extends Button
 func _ready() -> void:
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_click.play()
+	if($CRT):
+		$CRT.visible = Globals.is_crt_on
 		
 func _on_pressed() -> void:
 	if Globals.is_sound_on:

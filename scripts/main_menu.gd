@@ -21,6 +21,8 @@ func _on_controls_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/controls_menu.tscn")
 
 func _on_crt_button_pressed() -> void:
+	if Globals.is_sound_on:
+		$AudioStreamPlayer_click.play()
 	Globals.is_crt_on = not Globals.is_crt_on
 	$VBoxContainer/crt_button.text = "CRT:" + ("ON" if Globals.is_crt_on else "OFF")
 	$CRT.visible = Globals.is_crt_on
