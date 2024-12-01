@@ -21,4 +21,7 @@ func game_over() -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
+	Globals.current_hp = Globals.MAX_HP
+	Globals.current_fuel = Globals.MAX_FUEL
+	Globals.CHEAT_INVINCIBLE = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

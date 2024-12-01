@@ -18,6 +18,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7s5gt")
 
+[node name="CRT" parent="." instance=ExtResource("4_73oov")]
+
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(128, 112)
 texture = ExtResource("1_fsajb")
@@ -82,7 +84,5 @@ script = ExtResource("3_gxjsw")
 
 [node name="AudioStreamPlayer_click" type="AudioStreamPlayer" parent="back_button"]
 stream = ExtResource("4_td6dx")
-
-[node name="CRT" parent="back_button" instance=ExtResource("4_73oov")]
 
 [connection signal="pressed" from="back_button" to="back_button" method="_on_pressed"]

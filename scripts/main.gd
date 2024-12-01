@@ -22,10 +22,12 @@ var game_over_screen: CanvasLayer
 func _ready() -> void:
 	obstacle_list = get_node("Obstacles")
 	pickup_energy_list = get_node("PickUpEnergies")
+	game_over_screen = get_node("GameOver")
+	
 	viewport_size = get_viewport().get_visible_rect().size
 	viewport_width = viewport_size.x
 	viewport_height = viewport_size.y
-	game_over_screen = get_node("GameOver")
+
 	$CRT.visible = Globals.is_crt_on
 	
 	Globals.connect("end_game", _on_end_game)
@@ -37,12 +39,6 @@ func _ready() -> void:
 		$CRT.visible = true
 	else:
 		$CRT.visible = false
-
-	new_game()
-	
-func new_game():
-	game_running = false
-	game_over = false
 	if not Globals.is_crt_on:
 		$CRT.get_child(0).hide()
 	
