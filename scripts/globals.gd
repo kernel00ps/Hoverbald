@@ -1,6 +1,6 @@
 extends Node
 
-const CHEAT_INVINCIBLE: bool = false
+var CHEAT_INVINCIBLE: bool = false
 
 const CAMERA_MOTION_BASE_SPEED: float = 100
 
@@ -23,4 +23,7 @@ signal damage_taken
 
 var is_sound_on: bool = true
 var is_shonja: bool = false
+
+var play_menu_click_sound: bool = false
+
 var is_crt_on: bool = true
