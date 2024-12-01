@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://cs580vr1jmwkj"]
+[gd_scene load_steps=20 format=3 uid="uid://cs580vr1jmwkj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ghomb"]
 [ext_resource type="Texture2D" uid="uid://ukhe765kh6xx" path="res://assets/sprites/player_movement_32x32.png" id="2_alsec"]
+[ext_resource type="PackedScene" uid="uid://u7lurqyjrtma" path="res://scenes/particles.tscn" id="3_queb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ll60y"]
 size = Vector2(5, 18)
@@ -165,6 +166,9 @@ libraries = {
 "": SubResource("AnimationLibrary_ttoq1")
 }
 autoplay = "flying"
+
+[node name="Particles" parent="." instance=ExtResource("3_queb3")]
+position = Vector2(-10, 10)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

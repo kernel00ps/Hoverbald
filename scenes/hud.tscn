@@ -72,5 +72,10 @@ value = 6.0
 texture_under = ExtResource("6_sqhnw")
 texture_progress = ExtResource("7_3wcj8")
 
+[node name="InvincibilityTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="FuelUpdateTimer" to="." method="_on_fuel_update_timer_timeout"]
+[connection signal="timeout" from="InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
