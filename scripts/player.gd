@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 80.0
 const JUMP_VELOCITY = -10.0
 
+const ANIM_FWD_TRESHOLD = 25
+
 func _ready() -> void:
 	velocity = Vector2.ZERO
 	position.x -= 50
@@ -24,7 +26,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	$AnimationTree.set("parameters/Flying/blend_position", velocity.normalized())
+	var anim_velocity = velocity
+	if velocity.y < ANIM_FWD_TRESHOLD && velocity.y > -ANIM_FWD_TRESHOLD:
+		anim_velocity.y = 0
+	
+	$AnimationTree.set("parameters/Flying/blend_position", anim_velocity.normalized())
+	
+	print_debug(velocity)
 	
 	move_and_slide()
 	
