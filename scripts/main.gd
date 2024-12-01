@@ -4,6 +4,9 @@ extends Node
 @export var pickup_energy_scene: PackedScene
 @export var spikes_scene: PackedScene
 
+var game_running : bool
+var game_over : bool
+
 const SCROLL_SPEED : int = 1
 var viewport_size: Vector2
 var viewport_width: float
@@ -14,6 +17,7 @@ var obstacle_list: Node2D
 var pickup_energy_list: Node2D
 
 var game_over_screen: CanvasLayer 
+
 
 func _ready() -> void:
 	obstacle_list = get_node("Obstacles")
