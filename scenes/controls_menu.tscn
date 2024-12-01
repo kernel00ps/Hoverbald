@@ -52,7 +52,9 @@ Don't run out of fuel.
 The goal is to go as
 far as you can.
 
-Have fun! :D"
+Have fun! :D
+
+"
 horizontal_alignment = 1
 
 [node name="back_button" type="Button" parent="."]
