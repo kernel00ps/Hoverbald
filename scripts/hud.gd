@@ -52,3 +52,5 @@ func _on_damage_taken() -> void:
 	print("DAMAGED")
 	Globals.current_hp -= 1
 	health_bar.value -= 1
+	if Globals.current_hp > 0:
+		get_parent().play_hurt()

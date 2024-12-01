@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dva3lk3i4yth4"]
+[gd_scene load_steps=7 format=3 uid="uid://dva3lk3i4yth4"]
 
 [ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_47ppt"]
 [ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="1_uk3nv"]
 [ext_resource type="Script" path="res://scripts/back_button.gd" id="3_lm23o"]
 [ext_resource type="PackedScene" uid="uid://dnkgvrhct02v3" path="res://scenes/crt.tscn" id="4_6x31b"]
+[ext_resource type="AudioStream" uid="uid://4hv4clg2acnu" path="res://assets/sound/sound_click.wav" id="4_j05xx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_30504"]
 
@@ -71,6 +72,9 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_30504")
 text = "Back"
 flat = true
 script = ExtResource("3_lm23o")
+
+[node name="AudioStreamPlayer_click" type="AudioStreamPlayer" parent="back_button"]
+stream = ExtResource("4_j05xx")
 
 [node name="CRT" parent="." instance=ExtResource("4_6x31b")]
 
