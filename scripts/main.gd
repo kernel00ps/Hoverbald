@@ -74,6 +74,11 @@ func player_hit_obstacle() -> void:
 		if(Globals.current_hp <= 0):
 			game_over_screen.game_over()
 
+func player_esc() -> void:
+	Globals.camera_speed_modifier = 1
+	$GameOver.reset_vars()
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
 func player_picked_up_energy() -> void:
 	Globals.fuel_modifier = Globals.PICKUP_VALUE
 	play_pickup()

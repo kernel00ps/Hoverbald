@@ -13,6 +13,9 @@ func _physics_process(delta: float) -> void:
 
 	velocity += get_gravity() * delta
 
+	if Input.is_action_pressed("ESC"):
+		get_parent().get_parent().player_esc()
+
 	if Input.is_action_pressed("UP"):
 		velocity.y += JUMP_VELOCITY
 		
