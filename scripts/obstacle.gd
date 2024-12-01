@@ -100,3 +100,6 @@ func resize_middle_area(new_height: float):
 	#nekad je ovo toliko malo da samo mora da nema scale
 	if $MiddleArea.scale.y < 0.001:
 		$MiddleArea.scale.y = 1
+
+func get_rect() -> Rect2:
+	return Rect2(position - scale * PIXEL_SIZE / 2, scale * PIXEL_SIZE)

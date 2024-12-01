@@ -5,11 +5,9 @@ func _ready() -> void:
 		MenuMusicPlayer._play_menu_music()
 	if Globals.is_sound_on && Globals.play_menu_click_sound:
 		$AudioStreamPlayer_click.play()
-	if Globals.is_crt_on:
-		$CRT.visible = true
-	else:
-		$CRT.visible = false
-	
+	$VBoxContainer/crt_button.text = "CRT:" + ("ON" if Globals.is_crt_on else "OFF")
+	$CRT.visible = Globals.is_crt_on
+
 	Globals.play_menu_click_sound = false
 	$ShonjaButton.modulate = Color(1, 1, 1, 0)
 	
@@ -24,11 +22,9 @@ func _on_controls_button_pressed() -> void:
 
 func _on_crt_button_pressed() -> void:
 	Globals.is_crt_on = not Globals.is_crt_on
-	if Globals.is_crt_on:
-		$CRT.visible = true
-	else:
-		$CRT.visible = false
-
+	$VBoxContainer/crt_button.text = "CRT:" + ("ON" if Globals.is_crt_on else "OFF")
+	$CRT.visible = Globals.is_crt_on
+	
 func _on_sound_button_pressed() -> void:
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_click.play()

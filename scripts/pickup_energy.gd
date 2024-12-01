@@ -6,6 +6,7 @@ signal picked_up
 
 const PIXEL_SIZE: int = 16
 
+
 func _ready() -> void:
 	var viewport_size = get_viewport().get_visible_rect().size
 	var viewport_width = viewport_size.x
@@ -24,3 +25,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		emit_signal("picked_up")
 		queue_free()
+
+func get_rect() -> Rect2:
+	return Rect2(position - scale * PIXEL_SIZE / 2, scale * PIXEL_SIZE)

@@ -18,14 +18,18 @@ var pickup_energy_list: Node2D
 
 var game_over_screen: CanvasLayer 
 
+const SPAWN_DISTANCE: int = 100
 
 func _ready() -> void:
 	obstacle_list = get_node("Obstacles")
 	pickup_energy_list = get_node("PickUpEnergies")
+	game_over_screen = get_node("GameOver")
+	
 	viewport_size = get_viewport().get_visible_rect().size
 	viewport_width = viewport_size.x
 	viewport_height = viewport_size.y
-	game_over_screen = get_node("GameOver")
+
+	$CRT.visible = Globals.is_crt_on
 	
 	Globals.connect("end_game", _on_end_game)
 	
@@ -36,12 +40,6 @@ func _ready() -> void:
 		$CRT.visible = true
 	else:
 		$CRT.visible = false
-
-	new_game()
-	
-func new_game():
-	game_running = false
-	game_over = false
 	if not Globals.is_crt_on:
 		$CRT.get_child(0).hide()
 	
@@ -64,6 +62,9 @@ func generate_pickup_energy() -> void:
 	var pickup_energy: PickupEnergy = pickup_energy_scene.instantiate()
 	pickup_energy.picked_up.connect(player_picked_up_energy)
 	pickup_energy_list.add_child(pickup_energy)
+	for obstacle in obstacle_list.get_children():
+		if abs(pickup_energy.position.x - obstacle.position.x) < SPAWN_DISTANCE:
+			pickup_energy.position.x += SPAWN_DISTANCE
 
 func remove_offscreen_pickups() -> void:
 	for pickup in pickup_energy_list.get_children():

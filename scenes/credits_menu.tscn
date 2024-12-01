@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://pe4ptnaejm75"]
+[gd_scene load_steps=8 format=3 uid="uid://pe4ptnaejm75"]
 
+[ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_7s5gt"]
 [ext_resource type="FontFile" uid="uid://cgb7cxf605ki7" path="res://assets/other/font_pressstart2p.ttf" id="1_14oto"]
 [ext_resource type="Texture2D" uid="uid://d26by6jwxpnd4" path="res://assets/backgrounds/background_black.png" id="1_fsajb"]
 [ext_resource type="Script" path="res://scripts/back_button.gd" id="3_gxjsw"]
@@ -15,6 +16,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7s5gt")
+
+[node name="CRT" parent="." instance=ExtResource("4_73oov")]
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(128, 112)

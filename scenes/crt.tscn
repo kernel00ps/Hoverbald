@@ -4,6 +4,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f0jrw"]
 shader = ExtResource("1_581q7")
+shader_parameter/scanline_density = 224.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_k6xi8"]
 size = Vector2(256, 224)
