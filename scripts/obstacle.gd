@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Obstacle
 
-signal hit_obstable
+signal hit_obstacle
 
 const MIN_HEIGHT: float = 32.0
 const MAX_HEIGHT: float = 128.0
@@ -62,7 +62,7 @@ func _on_middle_area_body_entered(body: Node2D) -> void:
 		obstacle_hit()
 
 func obstacle_hit() -> void:
-	hit_obstable.emit()
+	hit_obstacle.emit()
 	
 func randomize_obstacle():
 	var new_middle_height = randf_range(MIN_HEIGHT, MAX_HEIGHT)

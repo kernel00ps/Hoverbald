@@ -8,6 +8,8 @@ var bar_size
 var minutes:int = 0
 var seconds:int = 0
 
+@export var game_over_screen:CanvasLayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fuel_bar = get_node("FuelBar")
@@ -32,10 +34,14 @@ func update():
 			progress.scale.x = 1
 		elif(Globals.current_fuel + Globals.fuel_modifier < 0):
 			Globals.current_fuel = 0
+			
 			progress.scale.x = 0
 		else:
 			Globals.current_fuel += Globals.fuel_modifier
 			progress.scale.x += bar_size * Globals.fuel_modifier / 100
+			
+	if(Globals.current_fuel <= 0):
+		Globals.emit_signal("end_game")
 	Globals.fuel_modifier = Globals.DEPLETION_RATE
 		
 func _on_timer_timeout() -> void:
