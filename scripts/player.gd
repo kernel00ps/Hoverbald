@@ -32,7 +32,5 @@ func _physics_process(delta: float) -> void:
 	
 	$AnimationTree.set("parameters/Flying/blend_position", anim_velocity.normalized())
 	
-	print_debug(velocity)
-	
 	move_and_slide()
 	

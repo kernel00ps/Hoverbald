@@ -136,7 +136,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xpr3"]
-size = Vector2(11.5, 15.8125)
+size = Vector2(7.51301, 10.5652)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_omen0"]
 atlas = ExtResource("3_imskh")
@@ -203,7 +203,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a47u"]
-size = Vector2(11.9996, 16.3653)
+size = Vector2(8.68626, 10.134)
 
 [node name="Obstacle" type="Node2D"]
 script = ExtResource("1_xlgrv")
@@ -213,7 +213,7 @@ script = ExtResource("1_xlgrv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MiddleArea"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1i77g")
-frame_progress = 0.378848
+frame_progress = 0.645087
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea"]
 position = Vector2(0, 0.032135)
@@ -224,9 +224,10 @@ shape = SubResource("RectangleShape2D_qhpof")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UpperArea"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_bsp00")
-frame_progress = 0.61815
+frame_progress = 0.884388
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperArea"]
+position = Vector2(-0.296124, 1.24512)
 shape = SubResource("RectangleShape2D_1xpr3")
 
 [node name="LowerArea" type="Area2D" parent="."]
@@ -237,6 +238,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_gdoic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowerArea"]
+position = Vector2(-0.364933, -2.06592)
 shape = SubResource("RectangleShape2D_4a47u")
 
 [connection signal="body_entered" from="MiddleArea" to="." method="_on_middle_area_body_entered"]

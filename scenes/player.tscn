@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ukhe765kh6xx" path="res://assets/sprites/player_movement_32x32.png" id="2_alsec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ll60y"]
-size = Vector2(12, 20)
+size = Vector2(5, 18)
 
 [sub_resource type="Animation" id="Animation_0qnfk"]
 length = 0.001
@@ -157,7 +157,7 @@ collision_mask = 6
 script = ExtResource("1_ghomb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_ll60y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

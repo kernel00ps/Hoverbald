@@ -73,7 +73,6 @@ func player_hit_obstacle() -> void:
 		Globals.emit_signal("damage_taken")
 		if(Globals.current_hp <= 0):
 			game_over_screen.game_over()
-	print("obstacle_hit")
 
 func player_picked_up_energy() -> void:
 	Globals.fuel_modifier = Globals.PICKUP_VALUE
@@ -93,3 +92,7 @@ func play_pickup() -> void:
 func _on_audio_stream_player_intro_finished() -> void:
 	if Globals.is_sound_on:
 		$AudioStreamPlayer_music.play()
+
+func _on_speed_up_timer_timeout() -> void:
+	Globals.camera_speed_modifier += 10
+	$ObstacleTimer.wait_time *= 0.95

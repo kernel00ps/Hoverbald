@@ -45,7 +45,7 @@ func _ready() -> void:
 	generate_floor(Vector2i(start_x, upper_y), BUFFER, false)
 	
 func _process(delta: float) -> void:
-	var offset: float = Globals.CAMERA_MOTION_BASE_SPEED * Globals.camera_speed_modifier * delta
+	var offset: float = (Globals.CAMERA_MOTION_BASE_SPEED + Globals.camera_speed_modifier) * delta
 	
 	tile_map_lower.position.x -= offset
 	tile_map_upper.position.x -= offset

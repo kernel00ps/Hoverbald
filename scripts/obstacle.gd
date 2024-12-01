@@ -45,7 +45,7 @@ func _ready() -> void:
 	lower_area_sprite.play("default")
 	
 func _process(delta: float) -> void:
-	var offset: float = Globals.CAMERA_MOTION_BASE_SPEED * Globals.camera_speed_modifier * delta
+	var offset: float = (Globals.CAMERA_MOTION_BASE_SPEED + Globals.camera_speed_modifier) * delta
 	position.x -= offset
 
 #ove dve funkcije su iste samo za lower i upper opstacle
