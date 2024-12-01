@@ -167,6 +167,9 @@ libraries = {
 }
 autoplay = "flying"
 
+[node name="Particles" parent="." instance=ExtResource("3_queb3")]
+position = Vector2(-10, 10)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_alsec")
@@ -176,6 +179,3 @@ vframes = 5
 tree_root = SubResource("AnimationNodeStateMachine_4f6ul")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Flying/blend_position = Vector2(-0.302944, -0.513889)
-
-[node name="Particles" parent="." instance=ExtResource("3_queb3")]
-position = Vector2(-10, 10)

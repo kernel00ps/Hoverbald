@@ -8,7 +8,6 @@ const ANIM_FWD_TRESHOLD = 25
 func _ready() -> void:
 	velocity = Vector2.ZERO
 	position.x -= 50
-	$Particles.scale *= 0.1
 
 func _physics_process(delta: float) -> void:
 
